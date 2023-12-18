@@ -1,6 +1,8 @@
 package main
 
-import "github.com/ozlo/gown"
+import (
+	"github.com/ozlo/gown"
+)
 
 type WnDict struct {
 	wn *gown.WN

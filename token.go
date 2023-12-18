@@ -1,10 +1,15 @@
 package main
 
-import "github.com/jdkato/prose/v3"
+import (
+	"regexp"
+
+	"github.com/jdkato/prose/v3"
+)
 
 var (
-	suffixes = []string{",", ")", `"`, "]", "!", ";", ".", "?", ":", "'", "*"}
-	prefixes = []string{"$", "(", `"`, "[", "-", "*"}
+	suffixes    = []string{",", ")", `"`, "]", "!", ";", ".", "?", ":", "'", "*"}
+	prefixes    = []string{"$", "(", `"`, "[", "-", "*"}
+	reValidWord = regexp.MustCompile(`^[a-zA-Z]+[-']*[a-zA-Z]*$`)
 )
 
 type Tokenizer struct {
@@ -33,16 +38,5 @@ func (to *Tokenizer) Tokens() []string {
 }
 
 func (to *Tokenizer) isValidWord(t prose.Token) bool {
-	var invalidTag = "(),:;.'`#$-"
-	for _, c := range invalidTag {
-		if t.Tag == string(c) {
-			return false
-		}
-	}
-
-	if t.Tag == "CD" {
-		return false
-	}
-
-	return true
+	return reValidWord.Match([]byte(t.Text))
 }

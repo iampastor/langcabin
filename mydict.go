@@ -3,11 +3,12 @@ package main
 import (
 	"bytes"
 	"os"
+	"path/filepath"
 	"sort"
 )
 
 var (
-	myDictName = "mydict.data"
+	myDictName = "mydict"
 )
 
 // MyDict contains words that we alreay know
@@ -15,15 +16,21 @@ type MyDict struct {
 	dict map[string]bool
 }
 
-func OpenMyDict(fname string) (*MyDict, error) {
-	dictData, err := os.ReadFile(fname)
+func OpenMyDict(dirname string) (*MyDict, error) {
+	fnames, err := filepath.Glob(filepath.Join(dirname, "*.data"))
 	if err != nil {
 		return nil, err
 	}
-	dictWords := bytes.Split(dictData, []byte("\n"))
-	dict := make(map[string]bool, len(dictWords))
-	for _, w := range dictWords {
-		dict[string(w)] = true
+	dict := make(map[string]bool, 5000)
+	for _, fname := range fnames {
+		dictData, err := os.ReadFile(fname)
+		if err != nil {
+			return nil, err
+		}
+		dictWords := bytes.Split(dictData, []byte("\n"))
+		for _, w := range dictWords {
+			dict[string(w)] = true
+		}
 	}
 
 	return &MyDict{dict: dict}, nil
