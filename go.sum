@@ -6,8 +6,6 @@ github.com/jdkato/prose/v3 v3.0.0-20210921205322-a376476c2627/go.mod h1:Jhd9L9aY
 github.com/jung-kurt/gofpdf v1.0.3-0.20190309125859-24315acbbda5/go.mod h1:7Id9E/uU8ce6rXgefFLlgrJj/GYY22cpxn+r32jIOes=
 github.com/neurosnap/sentences v1.0.6 h1:iBVUivNtlwGkYsJblWV8GGVFmXzZzak907Ci8aA0VTE=
 github.com/neurosnap/sentences v1.0.6/go.mod h1:pg1IapvYpWCJJm/Etxeh0+gtMf1rI1STY9S7eUCPbDc=
-github.com/ozlo/gown v0.0.0-20180718182605-619f2db5abc6 h1:UE5OgXkY0bsRnS/yU5A2pUDSl9oK6dpNWiAxZC/pJww=
-github.com/ozlo/gown v0.0.0-20180718182605-619f2db5abc6/go.mod h1:OgQa97oWtNTAtkFK3ysCmK6sBOIaxZav9KKRs9Q/HnA=
 golang.org/x/exp v0.0.0-20180321215751-8460e604b9de/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=
 golang.org/x/exp v0.0.0-20180807140117-3d87b88a115f/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=
 golang.org/x/exp v0.0.0-20190125153040-c74c464bbbf2/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=
